@@ -21,7 +21,9 @@
     /* background: linear-gradient(#631f16, #e5bb4b);  */
     /* background: linear-gradient(135deg, #0359ae -10%,#14b09b); */
     /* background: linear-gradient(135deg, #04254e, #8ad5eb 190%); */
-    background: #253f58;
+    background: linear-gradient(45deg, #253f58, #446b91, #233f58, #4a6e91);
+    background-size: 400% 400%;
+	animation: Gradient 12s ease infinite;
     /* background:  #e5bb4b; */
     transform: skewY(-6deg);
     transform-origin: top left;
@@ -30,6 +32,18 @@
     bottom: 0;
     right: 0;
     left: 0;
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
 }
 
 .content {
@@ -116,15 +130,21 @@ a {
     flex-direction: column;
 }
 
-.company {
+.whitebox {
     background: white;
     font-size: 18px;
     border-radius: 5px;
-    padding: 4px 9px;
-    margin-bottom: 10px;
-    max-width: 20vw;
+    padding: 8px 10px;
+    margin: 20px auto 30px auto;
+    max-width: 25vw;
     color: black;
     text-align: center;
+}
+
+.company {
+    max-width: 20vw;
+    padding: 4px 9px;
+    margin: 0 0 10px 0;
 }
 
 .company:hover {

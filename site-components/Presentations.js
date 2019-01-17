@@ -1,10 +1,11 @@
 import React from "react";
 import { Deck, Slide } from 'spectacle';
-import slides, { transitions } from "../presentation/index.mdx";
 import SVGLoader from '../tools/SVGLoader'
-import theme from '../presentation/theme';
+// const pathPicker = require('../presentation/path-handler')
 import { Link } from 'react-router-dom'
 import './main.css'
+import theme from '../presentation/carvana/theme';
+import slides, { transitions } from "../presentation/carvana/index.mdx";
 
 require("normalize.css");
 
@@ -31,6 +32,15 @@ export default class Presentations extends React.Component {
     };
 
     render() {
+        // const theme = dynamic(import(`../presentation/${this.props.match.params.company}/theme`));
+        // console.log('------------ theme', theme)
+        // import slides, { transitions } from `../presentation/${this.props.match.params.company}/index.mdx`
+        // const slides = require(`../presentation/${this.props.match.params.company}/index.mdx`)
+        // console.log('------------ slides', slides)
+        // const transitions = require(`../presentation/${this.props.match.params.company}/index.mdx`).transitions
+        // const theme = require(`../presentation/${this.props.match.params.company}/theme`).theme
+        // console.log('------------ pathPicker', pathPicker('carvana'))
+        // const slides = pathPicker({company: this.props.match.params.company})
         return (
             <React.Fragment>
                 <Deck transition={[this.creeperTransition]} transitionDuration={500} theme={theme}>

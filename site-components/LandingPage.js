@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './home.css'
 import { Link } from 'react-router-dom'
 
+// const file = 'home'
+// require(`./${file}.css`)
+
 const presentations = ['Discord', 'Oculus', 'Carvana']
 
 export default class LandingPage extends Component {
@@ -24,9 +27,17 @@ export default class LandingPage extends Component {
                     displayList: []
                 })
             } else {
-                this.setState({
-                    displayList: presentations.filter(company => company.match(inputRegex))
-                })
+                const matches = presentations.filter(company => company.match(inputRegex))
+
+                if(matches.length>0) {
+                    this.setState({
+                        displayList: presentations.filter(company => company.match(inputRegex))
+                    })
+                } else {
+                    this.setState({
+                        displayList: 'Sorry, no matches were found.'
+                    })
+                }
             }
         }
     }
@@ -47,9 +58,11 @@ export default class LandingPage extends Component {
                     </div>
                     {displayList.length>0 && 
                         <div className='company-container'>
-                            {displayList.map(company => (
-                                <Link to={`/${company.toLowerCase()}`}><div className='company'>{company}</div></Link>
-                    ))}</div>}
+                            {Array.isArray(displayList) ? displayList.map(company => (
+                                <Link to={`/${company.toLowerCase()}`}><div className='company whitebox'>{company}</div></Link>
+                        )):
+                        <div className='whitebox'>{displayList}</div>}
+                        </div>}
                 </div>
                 <footer>Designed and developed by Michael Kerr</footer>
             </div>
