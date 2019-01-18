@@ -1,0 +1,84 @@
+import {Cite} from 'spectacle';
+import {DarkSlide, CodeSlide, ColorSlide} from './slides';
+import RegularComponent from './regular-component';
+import { CircleAnimation } from '../shared-components'
+
+export default ColorSlide
+
+
+<div style={{ padding: '15vw 30vw', background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto'}}>
+  <img src='https://www.motiondsp.com/wp-content/uploads/2018/09/CubicMotionDSP_HColor-Transparent-1-300x64.png' alt='motiondsp'/>
+</div>
+
+---
+export default DarkSlide
+
+export const transition = ['zoom']
+
+# Write your Spectacle Presentations in Markdown
+## And seamlessly use React Components  
+**How sweet is that**
+**(super sweet)**
+
+---
+
+export const transition = ['fade']
+
+![datboi](https://pbs.twimg.com/media/CkjFUyTXEAEysBY.jpg)
+
+
+---
+
+<CircleAnimation />
+
+---
+
+export const transition = ['fade']
+
+<RegularComponent/>
+
+---
+
+###### Typography
+
+# Heading 1
+
+## Heading 2
+
+### Heading 3
+
+#### Heading 4
+
+##### Heading 5
+
+###### Heading 6
+
+Standard Text
+
+---
+
+###### Standard List
+
+- Item 1
+- Item 2
+- Item 3
+- Item 4
+
+---
+
+> Example Quote
+
+<Cite>Author</Cite>
+
+---
+export default CodeSlide
+
+```javascript
+class SuperCoolComponent extends React.Component {
+  render() {
+    return (
+      <p>code slide works in markdown too whaaaaat</p>
+    );
+  }
+}
+```

@@ -73,7 +73,6 @@ box-sizing:inherit
     position: fixed;
     bottom: 13px;
     left: 17px;
-    fill: rgb(206,206,206);
     transform: scale(1);
     transition: .3s ease-in-out;
 }

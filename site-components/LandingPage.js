@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import './home.css'
 import { Link } from 'react-router-dom'
 
-// const file = 'home'
-// require(`./${file}.css`)
-
-const presentations = ['Discord', 'Oculus', 'Carvana']
+const presentations = ['Discord', 'Oculus', 'Carvana', 'MotionDSP']
 
 export default class LandingPage extends Component {
     state = {
