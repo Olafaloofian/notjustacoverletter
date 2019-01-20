@@ -1,7 +1,7 @@
 import React from 'react';
 import { Slide, Text, Heading } from 'spectacle';
 import { MDXProvider } from '@mdx-js/tag'
-import components from './components';
+import components from '../components';
 import theme from './theme';
 
 
