@@ -19,12 +19,17 @@ module.exports = {
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      "process.env": {
+        EMAIL: JSON.stringify("bulluffalo@gmail.com")
+      }
+    }),
   ],
   module: {
     rules: [{
       test: /\.md$/,
-      loader: "html-loader!markdown-loader?gfm=false"
+      loader: "html-loader!markdown-loader?gfm=false",
     },
     {
       test: /\.mdx$/,
@@ -32,6 +37,10 @@ module.exports = {
       use: [
         { loader: "babel-loader" },
         { loader: require.resolve('./loader.js') }]
+    },
+    {
+      test: /\.pdf$/,
+      loader: 'url-loader?limit=8192'
     },
     {
       test: /\.(js|jsx)$/,

@@ -1,6 +1,6 @@
 import {Cite} from 'spectacle';
 import {DarkSlide, CodeSlide, ColorSlide, GreySlide} from './slides';
-import { CircleAnimation, ResumeAnimation, BlockGraphic, SkewBox, InteractiveSlider, AnimatedBackground } from '../shared-components'
+import { CircleAnimation, ResumeAnimation, BlockGraphic, SkewBox, InteractiveSlider, AnimatedBackground, HiringResources } from '../shared-components'
 import profile from '../../assets/profile.jpg'
 
 export default ColorSlide
@@ -104,6 +104,8 @@ export const transition = ['zoom']
 
 ---
 
+export const transition = ['zoom']
+
 export default GreySlide
 
 ***"True ambition and a constant desire to learn are what makes a great developer."***
@@ -111,14 +113,12 @@ export default GreySlide
 
 ---
 
-<AnimatedBackground content="Cubic | MotionDSP is a company I would love to work with. I'm attempting to achieve something extraordinary with my coding ability rather than settle for common or comfortable systems, and I feel like you will help me reach this goal." style={['#1C6FDA', '#6AA0E5', '#07438F']} />
+<AnimatedBackground content={<React.Fragment><span>Cubic | MotionDSP is a company I would be delighted to work with. I'm attempting to <span style={{ color: "#2a2f35" }}>achieve something extraordinary</span> with my coding ability rather than settle for common or comfortable systems, and I feel like <span style={{ color: "#2a2f35" }}>you will help me reach this goal.</span></span></React.Fragment>} style={['#1C6FDA', '#6AA0E5', '#07438F']} />
 
 ---
 
+export const transition = ['fade']
+
 export default ColorSlide
 
-### Thank you for taking the time to view this presentation. I hope you enjoyed a more interactive hiring experience! NotJustACoverLetter.com was designed and coded by me.
-
-#### I'd love to keep in touch! For more resources about me, use the buttons below.
-
-***Michael Kerr - Web Developer***
+<HiringResources primary='white' secondary="#1c6eda"/>
