@@ -43,7 +43,7 @@ export default class Presentations extends React.Component {
             slides = carvanaSlides
             transitions = carvanaTransitions
             theme = carvanaTheme
-        } else if (company === 'motiondsp') {
+        } else if (company === 'motiondsp' || company === 'cubic') {
             slides = motiondspSlides
             transitions = motiondspTransitions
             theme = motiondspTheme

@@ -8,8 +8,8 @@ const colors = {
 };
 
 const theme = createTheme(colors, {
-    primary: "Montserrat",
-    secondary: "Helvetica"
+    primary: "'Roboto', sans-serif",
+    secondary: "'Oswald', sans-serif"
   }, {
     progress: {
       pacmanTop: {

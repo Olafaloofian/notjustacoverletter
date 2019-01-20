@@ -1,12 +1,12 @@
 import {Cite} from 'spectacle';
-import {DarkSlide, CodeSlide, ColorSlide} from './slides';
-import RegularComponent from './regular-component';
-import { CircleAnimation } from '../shared-components'
+import {DarkSlide, CodeSlide, ColorSlide, GreySlide} from './slides';
+import { CircleAnimation, ResumeAnimation, BlockGraphic, SkewBox, InteractiveSlider, AnimatedBackground } from '../shared-components'
+import profile from '../../assets/profile.jpg'
 
 export default ColorSlide
 
 
-<div style={{ padding: '15vw 30vw', background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto'}}>
+<div style={{ borderRadius: '10px', padding: '15vw 0', maxWidth: '70vw', background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto'}}>
   <img src='https://www.motiondsp.com/wp-content/uploads/2018/09/CubicMotionDSP_HColor-Transparent-1-300x64.png' alt='motiondsp'/>
 </div>
 
@@ -15,70 +15,110 @@ export default DarkSlide
 
 export const transition = ['zoom']
 
-# Write your Spectacle Presentations in Markdown
-## And seamlessly use React Components  
-**How sweet is that**
-**(super sweet)**
+# Hey there Cubic|MotionDSP!
+<br/>
+
+**My name is Michael Kerr** 
+<figure style={{ margin: '20px 0' }}>
+  <img src={profile} alt='Michael Kerr' style={{ borderRadius: '10px', width: '540px', height: 'auto', margin: '0 auto' }}/>
+</figure>
+
+#### I am a full stack web developer.
+
+<br/>
 
 ---
 
 export const transition = ['fade']
 
-![datboi](https://pbs.twimg.com/media/CkjFUyTXEAEysBY.jpg)
+<div style={{ borderRadius: '10px', background: '#1aaaec', width: '100%', fontFamily: "'Roboto', sans-serif", color: 'white', padding: '40px 10px', margin: '0 auto 10px auto' }}>
+  I know you are going through a lot of job applications right now,
+  <br/>
+  so I thought I'd give you a break from reading all those letters and just let you scroll through this presentation! 😉
+</div>
 
+<ResumeAnimation />
 
 ---
+
+export const transition = ['fade']
+
+export default GreySlide
+
+**If you have my resume on hand, you may look at it and think:**
+
+<div style={{ borderRadius: '10px', background: 'white', padding: '30px 10px', textTransform: 'uppercase', fontWeight: '700', fontSize: '1.5em', margin: '30px auto 10px auto', width: '100%' }}>
+  "Wow, this guy isn't a programmer! He's a NOOB-grammer!"
+</div>
+
+<br/>
+
+<div style={{ borderRadius: '10px', background: '#1c6eda', color: 'white', fontSize: '1.2em', fontWeight: 'bold', padding: '80px 70px' }}>
+  I don't blame you! Everyone wants that Senior with 20 years of experience, right?
+  <br/>
+  <br/>
+  I might be relatively new to the industry, but I bring <span style={{ color: "black" }}>characteristics</span> to the table that are <span style={{ color: "black" }}>hard to find</span> in other developers.
+</div>
+
+---
+
+export default ColorSlide
 
 <CircleAnimation />
 
+<div style={{ borderRadius: '10px', background: 'black', padding: '60px 15px', color: 'white', fontSize: '1.2em', margin: '0 auto' }}>
+  The driving <span style={{ color: '#1aaaec' }}>passion</span> in my life has always been <span style={{ color: '#1aaaec' }}>creation.</span>
+  <br/>
+  After trying many different jobs, I became <span style={{ color: '#1aaaec' }}>obsessed</span> with coding because of the pure channel it creates for me to transform my <span style={{ color: '#1aaaec' }}>unique thoughts</span> into <span style={{ color: '#1aaaec' }}>tangible outcomes.</span>
+</div>
+
 ---
 
 export const transition = ['fade']
 
-<RegularComponent/>
+#### Three things that set me apart:
+
+<BlockGraphic 
+  text={{
+    topText: 'When I approach a problem, I look at it from every angle until I discover a truly innovative and exciting solution.', 
+    middleText: 'I am an extremely fast learner, able to pick up on new concepts and immediately start applying them.', 
+    bottomText: 'I have an acute awareness of how the code I\'m writing affects the end user - and what that means to the company\'s finances.'
+  }} 
+  style={{ 
+    topBlock: '#6AA0E5', 
+    middleBlock: '#4287DF', 
+    bottomBlock: '#085ECC' 
+  }}/>
 
 ---
 
-###### Typography
+export default DarkSlide
 
-# Heading 1
+export const transition = ['zoom']
 
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
-
-##### Heading 5
-
-###### Heading 6
-
-Standard Text
+<SkewBox content={{right: 'I\'m also very independent and able to manage my own time and productivity effectively!', left: 'I love collaborating, and I believe everyone can teach me something worth learning.'}} style={{ right: 'white', left: '#085ECC' }}/>
 
 ---
 
-###### Standard List
-
-- Item 1
-- Item 2
-- Item 3
-- Item 4
+<InteractiveSlider items={['Through my work, I hope to make a positive difference in the world and help solve people\'s problems.', 'My life revolves around the goals I set for myself. I truly believe that I can accomplish anything I commit effort to.']} style={['#1C6FDA', '#085ECC', '#4287DF']}/>
 
 ---
 
-> Example Quote
+export default GreySlide
 
-<Cite>Author</Cite>
+***"True ambition and a constant desire to learn are what makes a great developer."***
+<Cite>I just made that up but probably Bill Gates at some point</Cite>
 
 ---
-export default CodeSlide
 
-```javascript
-class SuperCoolComponent extends React.Component {
-  render() {
-    return (
-      <p>code slide works in markdown too whaaaaat</p>
-    );
-  }
-}
-```
+<AnimatedBackground content="Cubic | MotionDSP is a company I would love to work with. I'm attempting to achieve something extraordinary with my coding ability rather than settle for common or comfortable systems, and I feel like you will help me reach this goal." style={['#1C6FDA', '#6AA0E5', '#07438F']} />
+
+---
+
+export default ColorSlide
+
+### Thank you for taking the time to view this presentation. I hope you enjoyed a more interactive hiring experience! NotJustACoverLetter.com was designed and coded by me.
+
+#### I'd love to keep in touch! For more resources about me, use the buttons below.
+
+***Michael Kerr - Web Developer***

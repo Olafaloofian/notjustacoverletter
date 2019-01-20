@@ -179,3 +179,8 @@ input {
     width: 30vw;
     outline: none;
 }
+
+.spectacle-content {
+    max-height: 80vh !important;
+    max-width: 80vw !important;
+}
