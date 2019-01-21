@@ -2,6 +2,8 @@
 
 var path = require("path");
 var webpack = require("webpack");
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   mode: "production",
@@ -12,6 +14,20 @@ module.exports = {
     publicPath: "/dist/"
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Development Index',
+      template: 'index.html'
+    }),
+    new webpack.NamedModulesPlugin(),
+    new CopyWebpackPlugin([
+      { from: './assets/sunmail.ico' }
+    ]),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      "process.env": {
+        EMAIL: JSON.stringify("bulluffalo@gmail.com")
+      }
+    }),
     new webpack.DefinePlugin({
       "process.env": {
         NODE_ENV: JSON.stringify("production")
@@ -34,6 +50,10 @@ module.exports = {
           { loader: "babel-loader" },
           { loader: require.resolve("./loader.js") }
         ]
+      },
+      {
+        test: /\.pdf$/,
+        loader: 'url-loader?limit=8192'
       },
       {
         test: /\.(js|jsx)$/,

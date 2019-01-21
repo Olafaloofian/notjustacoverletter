@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './home.css'
 import { Link } from 'react-router-dom'
 
-const presentations = ['Discord', 'Oculus', 'Carvana', 'MotionDSP', 'Cubic']
+const presentations = ['MotionDSP', 'Cubic']
 
 export default class LandingPage extends Component {
     state = {
