@@ -50,7 +50,7 @@ export default class LandingPage extends Component {
                         <h3>Reviewing job applications doesn't have to be boring!</h3>
                     </header>
                     <div className="tooltip-container">
-                        <input type="text" name='input' onChange={(e) => this.handleInput(e)} placeholder='Company Name'/>
+                        <input type="text" name='input' autocomplete='off' onChange={(e) => this.handleInput(e)} placeholder='Company Name'/>
                         <div className='tooltip-text' id={`${displayList.length ? 'disabled' : ''}`}>Search for your company to see if you have an application!</div>
                     </div>
                     {displayList.length>0 && 
