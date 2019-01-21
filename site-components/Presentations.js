@@ -51,11 +51,9 @@ export default class Presentations extends React.Component {
         } else {
             slides = null
         }
-        console.log('------------ theme', theme)
 
         // More codesplitting code below
         // const lazyImport = React.lazy(() => import(`../presentations/${this.props.match.params.company}/index.mdx`))
-        // console.log('------------ lazyImport', lazyImport)
         return (
             <React.Fragment>
                 {slides ?

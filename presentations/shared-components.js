@@ -100,7 +100,6 @@ export const AnimatedBackground = (props) => {
 }
 
 export const HiringResources = (props) => {
-    console.log('------------ process.env', process.env)
     return (
         <div className="hiring-container">
             <div className="top-title" style={{ color: props.primary }}>

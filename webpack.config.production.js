@@ -14,13 +14,9 @@ module.exports = {
     publicPath: "/dist/"
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Development Index',
-      template: 'index.html'
-    }),
     new webpack.NamedModulesPlugin(),
     new CopyWebpackPlugin([
-      { from: './assets/sunmail.ico' }
+      { from: './dist/sunmail.ico' }
     ]),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
