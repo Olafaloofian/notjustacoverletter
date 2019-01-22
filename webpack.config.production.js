@@ -9,9 +9,10 @@ module.exports = {
   mode: "production",
   entry: ["babel-polyfill", "./index"],
   output: {
+    filename: "[name].bundle.js",
+    chunkFilename: '[name].bundle.js',
     path: path.join(__dirname, "dist"),
-    filename: "bundle.js",
-    publicPath: "/dist/"
+    publicPath: "/dist",
   },
   plugins: [
     new webpack.NamedModulesPlugin(),

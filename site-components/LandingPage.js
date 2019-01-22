@@ -14,10 +14,16 @@ export default class LandingPage extends Component {
         this.setState({
             [e.target.name]: e.target.value
         })
-    }
+        if(e.target.value.length < 3) {
+            this.setState({
+                displayList: false
+            })
+        }
+}
 
     componentDidUpdate(prevProps, prevState) {
-        if (prevState.input !== this.state.input) {
+        const { input } = this.state
+        if (prevState.input !== input && input.length >= 3) {
             const inputRegex = new RegExp(`${this.state.input}`, 'gi')
             if(this.state.input === '') {
                 this.setState({
@@ -32,7 +38,7 @@ export default class LandingPage extends Component {
                     })
                 } else {
                     this.setState({
-                        displayList: 'Sorry, no matches were found.'
+                        displayList: false
                     })
                 }
             }
@@ -40,7 +46,8 @@ export default class LandingPage extends Component {
     }
 
     render() {
-        const {displayList} = this.state
+        console.log('------------ this.state', this.state)
+        const {displayList, input} = this.state
         return (
             <div className='container'>
                 <div className='home-top'></div>
@@ -50,15 +57,15 @@ export default class LandingPage extends Component {
                         <h3>Reviewing job applications doesn't have to be boring!</h3>
                     </header>
                     <div className="tooltip-container">
-                        <input type="text" name='input' autocomplete='off' onChange={(e) => this.handleInput(e)} placeholder='Company Name'/>
-                        <div className='tooltip-text' id={`${displayList.length ? 'disabled' : ''}`}>Search for your company to see if you have an application!</div>
+                        <input type="text" name='input' autoComplete='off' onChange={(e) => this.handleInput(e)} placeholder='Company Name'/>
+                        <div className='tooltip-text' id={`${input.length ? 'disabled' : ''}`}>Search for your company to see if you have an application!</div>
                     </div>
-                    {displayList.length>0 && 
-                        <div className='company-container'>
-                            {Array.isArray(displayList) ? displayList.map(company => (
-                                <Link to={`/${company.toLowerCase()}`}><div className='company whitebox'>{company}</div></Link>
+                    {input.length > 0 && 
+                        <div className={`company-container ${displayList ? '' : 'error'}`}>
+                            {displayList.length > 0 ? displayList.map(company => (
+                                <Link key={company} to={`/${company.toLowerCase()}`}><div className='company whitebox'>{company}</div></Link>
                         )):
-                        <div className='whitebox'>{displayList}</div>}
+                            <div className='whitebox'>{input.length !== 0 && input.length < 3 ? 'Please type at least three characters.' : 'Sorry, no matches were found'}</div>}
                         </div>}
                 </div>
                 <footer>Designed and developed by Michael Kerr</footer>

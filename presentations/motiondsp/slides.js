@@ -52,7 +52,7 @@ export const DarkSlide = ({ children, ...rest }) => (
 );
 
 export const ColorSlide = ({ children, ...rest }) => (
-  <Slide bgColor={theme.screen.colors.secondary} {...rest}>
+  <Slide bgColor={theme.screen.colors.altSecondary} {...rest}>
     <MDXProvider components={coloredComponents}>{children}</MDXProvider>
   </Slide>
 )

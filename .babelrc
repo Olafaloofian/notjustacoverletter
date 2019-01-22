@@ -16,7 +16,8 @@
         "transform-react-constant-elements",
         "transform-react-inline-elements",
         "transform-runtime",
-        "transform-decorators-legacy"
+        "transform-decorators-legacy",
+        "syntax-dynamic-import"
       ]
     },
     "test": {
@@ -24,5 +25,6 @@
         "transform-es2015-modules-commonjs"
       ]
     }
-  }
+  },
+  "comments": true
 }

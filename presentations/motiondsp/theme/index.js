@@ -4,7 +4,8 @@ const colors = {
   primary: "white",
   secondary: "#1c6eda", // blue
   tertiary: "#1aaaec", // light blue
-  quaternary: "#2a2f35" // slate gray
+  quaternary: "#2a2f35", // slate gray
+  altSecondary: '#194c8f' //darker blue
 };
 
 const theme = createTheme(colors, {

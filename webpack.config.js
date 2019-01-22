@@ -13,8 +13,9 @@ module.exports = {
     "./index"
   ],
   output: {
+    filename: "[name].bundle.js",
+    chunkFilename: '[name].bundle.js',
     path: path.join(__dirname, "dist"),
-    filename: "bundle.js",
     publicPath: "/dist",
   },
   plugins: [
