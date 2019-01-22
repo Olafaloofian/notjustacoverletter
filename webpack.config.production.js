@@ -9,8 +9,8 @@ module.exports = {
   mode: "production",
   entry: ["babel-polyfill", "./index"],
   output: {
-    filename: "[name].bundle.js",
-    chunkFilename: '[name].bundle.js',
+    filename: "bundle.js",
+    chunkFilename: 'bundle.js',
     path: path.join(__dirname, "dist"),
     publicPath: "/dist",
   },
