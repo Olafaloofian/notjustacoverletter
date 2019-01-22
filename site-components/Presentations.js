@@ -1,16 +1,10 @@
 import React, { Suspense, lazy } from "react";
 import { Deck, Slide } from 'spectacle';
 import { Redirect } from 'react-router-dom'
-import SVGLoader from '../tools/SVGLoader'
 import { Link } from 'react-router-dom'
 import './main.css'
-import carvanaTheme from '../presentations/carvana/theme';
-import carvanaSlides, { transitions as carvanaTransitions } from "../presentations/carvana/index.mdx";
-// const motiondspTheme = React.lazy(() => import('../presentations/motiondsp/theme'))
-import motiondspTheme from "../presentations/motiondsp/theme"
-import motiondspSlides, { transitions as motiondspTransitions } from '../presentations/motiondsp/index.mdx'
-const slides = React.lazy(() => import('../presentations/motiondsp/index.mdx').then(resolve => resolve.default ))
-// TODO: Try to get these imports modularized somehow - maybe with code splitting?
+// TODO: Get this SVG Loader working
+// import SVGLoader from '../tools/SVGLoader'
 
 require("normalize.css");
 
@@ -73,7 +67,6 @@ export default class Presentations extends React.Component {
     };
 
     render() {
-        console.log('------------ this.state', this.state)
         return (
             <React.Fragment>
                 {this.state.presentation}

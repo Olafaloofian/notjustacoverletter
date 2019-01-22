@@ -6,15 +6,12 @@ var webpack = require("webpack");
 module.exports = {
   mode: "development",
   devtool: "cheap-module-source-map",
-  entry: [
-    "babel-polyfill",
-    'webpack-hot-middleware/client',
-    "react-hot-loader/patch",
-    "./index"
-  ],
+  entry: {
+    index: './index.js'
+  },
   output: {
     filename: "bundle.js",
-    chunkFilename: 'bundle.js',
+    chunkFilename: '[name].bundle.js',
     path: path.join(__dirname, "dist"),
     publicPath: "/dist",
   },

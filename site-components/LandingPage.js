@@ -46,7 +46,6 @@ export default class LandingPage extends Component {
     }
 
     render() {
-        console.log('------------ this.state', this.state)
         const {displayList, input} = this.state
         return (
             <div className='container'>
