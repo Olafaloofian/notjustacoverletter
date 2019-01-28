@@ -2,19 +2,28 @@ import React, { Suspense, lazy } from "react";
 import { Deck, Slide } from 'spectacle';
 import { Redirect } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import rotateScreen from '../assets/rotate-screen.png'
 import './main.css'
 // TODO: Get this SVG Loader working
 // import SVGLoader from '../tools/SVGLoader'
 
 require("normalize.css");
 
+var isMobile
+var isLandscape
+
 export default class Presentations extends React.Component {
     state = {
         showNotification: false,
-        presentation: <div className='loader-container'><div className='loader'></div></div>
+        presentation: <div className='loader-container'><div className='loader'></div></div>,
+        width: window.innerWidth,
+        height: window.innerHeight
     }
 
     componentDidMount() {
+        window.addEventListener('orientationchange', (e) => this.updateWindowDimensions(e), { passive: false });
+
+        // Routing the user to the correct presentation based on URL
         const { company } = this.props.match.params
         const themeImport = import(`../presentations/${company === 'cubic' || company === 'motiondsp' ? 'motiondsp' : company }/theme`)
         const slideImport = import(`../presentations/${company === 'cubic' || company === 'motiondsp' ? 'motiondsp' : company }/index.mdx`)
@@ -44,6 +53,19 @@ export default class Presentations extends React.Component {
         })
     }
 
+    componentWillUnmount() {
+        window.removeEventListener('orientationchange', this.updateWindowDimensions);
+    }
+    
+    updateWindowDimensions = (e) => {
+        if(e) {
+            e.preventDefault()
+        }
+        
+        // For some reason, this only works correctly if the height and width of the device are swapped. Maybe this callback as part of the event listener runs before the event finishes and there is a new width?
+        this.setState({ width: window.innerHeight, height: window.innerWidth });
+    }
+
     toggleNotification = () => {
         setTimeout(() => {
             this.setState({
@@ -67,11 +89,25 @@ export default class Presentations extends React.Component {
     };
 
     render() {
+        isMobile = this.state.width < 800 ? true : false
+        isLandscape = this.state.width > 600 && this.state.width < 1000 ? true : false
+
         return (
-            <React.Fragment>
-                {this.state.presentation}
-                <div className={`notification-bar ${this.state.showNotification ? 'show-notification' : ''}`}>To navigate, use your arrow keys.</div>
-            </React.Fragment>
+            isMobile && !isLandscape ?
+                <div className='landscape-prompt'>
+                    <img src={rotateScreen} alt="Rotate Screen"/>
+                    <div>Please rotate your device</div>
+                    <svg viewBox="0 0 512 512"><path fill="black" d="M396.795 396.8H320V448h128V320h-51.205zM396.8 115.205V192H448V64H320v51.205zM115.205 115.2H192V64H64v128h51.205zM115.2 396.795V320H64v128h128v-51.205z"></path></svg>
+                    <div>Use full screen for best experience</div>
+                </div>
+            :
+                <div className='presentation-container'>
+                    {this.state.presentation}
+                    <div className={`notification-bar ${this.state.showNotification ? 'show-notification' : ''}`}>{this.state.width < 1000 ? 'Swipe to navigate' : 'To navigate, use your arrow keys.'}</div>
+                </div>
         )
     }
 }
+
+export var isMobile
+export var isLandscape

@@ -2,7 +2,6 @@
 
 var path = require("path");
 var webpack = require("webpack");
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
@@ -12,7 +11,7 @@ module.exports = {
     filename: "bundle.js",
     chunkFilename: '[name].bundle.js',
     path: path.join(__dirname, "dist"),
-    publicPath: "/dist",
+    publicPath: "/dist/",
   },
   plugins: [
     new webpack.NamedModulesPlugin(),

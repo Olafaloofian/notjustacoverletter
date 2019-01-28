@@ -186,7 +186,44 @@ input {
     outline: none;
 }
 
-.spectacle-content {
-    max-height: 80vh !important;
-    max-width: 80vw !important;
+.presentation-container .spectacle-content {
+    max-height: 80vh;
+    max-width: 80vw;
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        /* height: 100%; */
+    }
+
+    .title {
+        font-size: 50px;
+        padding: 0px 20px;
+    }
+
+    h3 {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    input {
+        width: 85vw;
+    }
+
+    .tooltip-container .tooltip-text {
+        width: 85vw;
+    }
+
+    .company-container {
+        width: 85vw;
+    }
+
+    .whitebox {
+        max-width: 65vw;
+    }
+
+    footer {
+        font-size: 12px;
+    }
 }
