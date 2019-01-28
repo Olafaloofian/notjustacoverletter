@@ -24,10 +24,19 @@ export default class LandingPage extends Component {
     }
 
     componentDidMount() {
-        this.setState({
-            height: window.innerHeight,
-            width: window.innerWidth
-        })
+        window.addEventListener('orientationchange', (e) => this.updateWindowDimensions(e), { passive: false });
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('orientationchange', this.updateWindowDimensions);
+    }
+
+    updateWindowDimensions = (e) => {
+        if(e) {
+            e.preventDefault()
+        }
+
+        this.setState({ width: window.innerHeight, height: window.innerWidth });
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -57,9 +66,8 @@ export default class LandingPage extends Component {
 
     render() {
         const {displayList, input} = this.state
-        console.log('------------ window.innerHeight', 
-        window.innerHeight)
         const isMobile = this.state.width < 1000
+        
         return (
             <div className='container' style={isMobile && { height: this.state.height }} >
                 <div className='home-top'></div>
