@@ -7,7 +7,9 @@ const presentations = ['MotionDSP', 'Cubic']
 export default class LandingPage extends Component {
     state = {
         input: '',
-        displayList: []
+        displayList: [],
+        height: window.innerHeight,
+        width: window.innerWidth
     }
 
     handleInput = (e) => {
@@ -19,9 +21,17 @@ export default class LandingPage extends Component {
                 displayList: false
             })
         }
-}
+    }
+
+    componentDidMount() {
+        this.setState({
+            height: window.innerHeight,
+            width: window.innerWidth
+        })
+    }
 
     componentDidUpdate(prevProps, prevState) {
+
         const { input } = this.state
         if (prevState.input !== input && input.length >= 3) {
             const inputRegex = new RegExp(`${this.state.input}`, 'gi')
@@ -47,13 +57,16 @@ export default class LandingPage extends Component {
 
     render() {
         const {displayList, input} = this.state
+        console.log('------------ window.innerHeight', 
+        window.innerHeight)
+        const isMobile = this.state.width < 1000
         return (
-            <div className='container'>
+            <div className='container' style={isMobile && { height: this.state.height }} >
                 <div className='home-top'></div>
                 <div className="content">
                     <header>
                         <h2 className='title'>NOT JUST A COVER LETTER</h2>
-                        <h3>Reviewing job applications doesn't have to be boring!</h3>
+                        {!isMobile &&                         <h3>Reviewing job applications doesn't have to be boring!</h3>}
                     </header>
                     <div className="tooltip-container">
                         <input type="text" name='input' autoComplete='off' onChange={(e) => this.handleInput(e)} placeholder='Company Name'/>
@@ -66,6 +79,7 @@ export default class LandingPage extends Component {
                         )):
                             <div className='whitebox'>{input.length !== 0 && input.length < 3 ? 'Please type at least three characters.' : 'Sorry, no matches were found'}</div>}
                         </div>}
+                        {isMobile &&                         <h3>Reviewing job applications doesn't have to be boring!</h3>}
                 </div>
                 <footer>Designed and developed by Michael Kerr</footer>
             </div>

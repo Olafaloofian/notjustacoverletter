@@ -193,8 +193,12 @@ input {
 
 @media (max-width: 600px) {
 
-    .container {
-        /* height: 100%; */
+    .home-top {
+        height: 93%;
+    }
+
+    header {
+        margin-bottom: 9vh;
     }
 
     .title {
@@ -205,6 +209,7 @@ input {
     h3 {
         padding-left: 10px;
         padding-right: 10px;
+        text-align: center;
     }
 
     input {
