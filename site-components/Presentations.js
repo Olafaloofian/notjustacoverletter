@@ -45,7 +45,7 @@ export default class Presentations extends React.Component {
             )
             this.setState({
                 presentation: constructedDeck
-            }, () => this.toggleNotification())
+            }, () => this.state.width > 1000 && this.toggleNotification())
         }).catch(err => {
             this.setState({
                 presentation: <Redirect to='/' />
@@ -64,6 +64,7 @@ export default class Presentations extends React.Component {
         
         // For some reason, this only works correctly if the height and width of the device are swapped. Maybe this callback as part of the event listener runs before the event finishes and there is a new width?
         this.setState({ width: window.innerHeight, height: window.innerWidth });
+        this.toggleNotification()
     }
 
     toggleNotification = () => {
@@ -92,6 +93,7 @@ export default class Presentations extends React.Component {
         isMobile = this.state.width < 800 ? true : false
         isLandscape = this.state.width > 600 && this.state.width < 1000 ? true : false
 
+        console.log('------------ this.state', this.state)
         return (
             isMobile && !isLandscape ?
                 <div className='landscape-prompt'>
