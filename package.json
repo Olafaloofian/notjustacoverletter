@@ -1,7 +1,7 @@
 {
-  "name": "spectacle-boilerplate",
+  "name": "notjustacoverletter",
   "version": "1.0.1",
-  "description": "ReactJS Powered Presentation Framework",
+  "description": "An app to replace traditional cover letters with a more interactive presentation.",
   "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf dist",
