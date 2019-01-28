@@ -9,16 +9,19 @@ module.exports = {
   entry: ["babel-polyfill", "./index"],
   output: {
     filename: "bundle.js",
+    // These properties are important for code-splitting
     chunkFilename: '[name].bundle.js',
     path: path.join(__dirname, "dist"),
     publicPath: "/dist/",
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
+    // Getting the .ico to be in the dist folder
     new CopyWebpackPlugin([
       { from: './dist/sunmail.ico' }
     ]),
     new webpack.HotModuleReplacementPlugin(),
+    // TODO: Is this the best way to hide in-app stuff?
     new webpack.DefinePlugin({
       "process.env": {
         EMAIL: JSON.stringify("bulluffalo@gmail.com")
@@ -48,6 +51,7 @@ module.exports = {
         ]
       },
       {
+        // For loading pdfs
         test: /\.pdf$/,
         loader: 'url-loader?limit=8192'
       },

@@ -2,6 +2,7 @@ import React from 'react'
 import './shared-components.css'
 import resume from '../assets/Michael-Kerr-Resume.pdf'
 
+// Two circles with an animated line connecting them
 export const CircleAnimation = () => {
     return (
         <div className="circle-container">
@@ -12,6 +13,7 @@ export const CircleAnimation = () => {
     )
 }
 
+// An infinitely-sliding image animation
 export const ResumeAnimation = () => {
     return (
         <div className="resume-container">
@@ -20,6 +22,7 @@ export const ResumeAnimation = () => {
     )
 }
 
+// Three colored and numbered blocks with content to the right of them
 export const BlockGraphic = (props) => {
     return (
         <div className="block-container">
@@ -39,6 +42,7 @@ export const BlockGraphic = (props) => {
     )
 }
 
+// Two pieces of content split down the middle by a diagonal line
 export const SkewBox = (props) => {
     return (
         <div className="skew-container" style={{ background: props.style.right, color: props.style.left }}>
@@ -48,12 +52,14 @@ export const SkewBox = (props) => {
     )
 }
 
+// A clickable drawer that shows more information with each step
 export class InteractiveSlider extends React.Component {
     state = {
         list: [],
         drawerLength: 'empty'
     }
 
+    // TODO: This could be refactored to be more dry/efficient
     slideOnDown = () => {
         const { list } = this.state
         const { items } = this.props
@@ -91,6 +97,7 @@ export class InteractiveSlider extends React.Component {
     }
 }
 
+// Animated gradient background container
 export const AnimatedBackground = (props) => {
     return (
         <div className="gradient-container" style={{ background: `linear-gradient(45deg, ${props.style[0]}, ${props.style[1]}, ${props.style[2]})`, backgroundSize: '400% 400%' }}>
@@ -99,6 +106,7 @@ export const AnimatedBackground = (props) => {
     )
 }
 
+// Most often for end of presentation. Displays buttons with extra resources.
 export const HiringResources = (props) => {
     return (
         <div className="hiring-container">

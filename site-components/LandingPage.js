@@ -12,6 +12,7 @@ export default class LandingPage extends Component {
         width: window.innerWidth
     }
 
+    // Catch-all input handler
     handleInput = (e) => {
         this.setState({
             [e.target.name]: e.target.value
@@ -23,6 +24,7 @@ export default class LandingPage extends Component {
         }
     }
 
+    // A lot of this app is heavily reliant on knowing the size of the viewport to make sure the user is shown the information in the best way possible.
     componentDidMount() {
         window.addEventListener('orientationchange', (e) => this.updateWindowDimensions(e), { passive: false });
 
@@ -35,6 +37,7 @@ export default class LandingPage extends Component {
         window.removeEventListener('resize', this.updateWindowDimensions);
     }
 
+    // Handles changes in the window dimensions
     updateWindowDimensions = (e) => {
         if(e) {
             e.preventDefault()
@@ -45,6 +48,7 @@ export default class LandingPage extends Component {
 
     componentDidUpdate(prevProps, prevState) {
 
+        // The user shouldn't be able to see results unless they type at least three characters
         const { input } = this.state
         if (prevState.input !== input && input.length >= 3) {
             const inputRegex = new RegExp(`${this.state.input}`, 'gi')

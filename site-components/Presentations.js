@@ -15,15 +15,17 @@ var isLandscape
 export default class Presentations extends React.Component {
     state = {
         showNotification: false,
+        // Initial loader symbol for presentations (deck must be retrieved from another webpack bundle)
         presentation: <div className='loader-container'><div className='loader'></div></div>,
         width: window.innerWidth,
         height: window.innerHeight
     }
 
     componentDidMount() {
+        // Handling mobile orientation changes (app must be in landscape mode)
         window.addEventListener('orientationchange', (e) => this.updateWindowDimensions(e), { passive: false });
 
-        // Routing the user to the correct presentation based on URL
+        // Routing the user to the correct presentation based on URL, with code splitting so that the user doesn't load a ton of stuff they aren't trying to see.
         const { company } = this.props.match.params
         const themeImport = import(`../presentations/${company === 'cubic' || company === 'motiondsp' ? 'motiondsp' : company }/theme`)
         const slideImport = import(`../presentations/${company === 'cubic' || company === 'motiondsp' ? 'motiondsp' : company }/index.mdx`)
@@ -32,6 +34,7 @@ export default class Presentations extends React.Component {
             const transitions = resolve[0].transitions
             const slides = resolve[0].default
             let constructedDeck = (
+                // The deck of slides is created below
                 <React.Fragment>
                     <Deck transition={[this.creeperTransition]} transitionDuration={500} theme={theme}>
                     {slides.map((S, i) => {
@@ -62,11 +65,12 @@ export default class Presentations extends React.Component {
             e.preventDefault()
         }
         
-        // For some reason, this only works correctly if the height and width of the device are swapped. Maybe this callback as part of the event listener runs before the event finishes and there is a new width?
+        // For some reason, this only works correctly if the height and width of the device are swapped. Maybe the innerWidth and innerHeight are set on load and orientation changes don't affect them?
         this.setState({ width: window.innerHeight, height: window.innerWidth });
         this.toggleNotification()
     }
 
+    // Toggles navigation notification
     toggleNotification = () => {
         setTimeout(() => {
             this.setState({
@@ -80,6 +84,7 @@ export default class Presentations extends React.Component {
         }, 3600)
     }
 
+    // Animation for deck of slides
     creeperTransition = (transitioning, forward) => {
         const offset = forward ? 100 : -100;
         return {
@@ -90,10 +95,10 @@ export default class Presentations extends React.Component {
     };
 
     render() {
+        // These two variables are important for detecting if the user is on mobile, and how they are holding their device.
         isMobile = this.state.width < 800 ? true : false
         isLandscape = this.state.width > 600 && this.state.width < 1000 ? true : false
 
-        console.log('------------ this.state', this.state)
         return (
             isMobile && !isLandscape ?
                 <div className='landscape-prompt'>
@@ -111,5 +116,6 @@ export default class Presentations extends React.Component {
     }
 }
 
+// It's possible these will end up being used later...
 export var isMobile
 export var isLandscape
