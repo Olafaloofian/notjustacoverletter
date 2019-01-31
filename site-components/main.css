@@ -51,9 +51,9 @@ box-sizing:inherit
 .notification-bar {
     background: rgb(34, 180, 34);
     width: 100vw;
-    height: 7vh;
+    height: 8vh;
     display: flex;
-    font-size: 3vw;
+    font-size: 2.2vw;
     justify-content: center;
     align-items: center;
     color: white;
@@ -61,7 +61,7 @@ box-sizing:inherit
     bottom: 0;
     left: 0;
     z-index: 1001;
-    transform: translateY(7vh);
+    transform: translateY(8vh);
     transition: 0.5s ease-in-out;
 }
 
@@ -209,7 +209,7 @@ box-sizing:inherit
 
 /* Responsive styling fixes below */
 .presentation-container h1 {
-    font-size: 6vw;
+    font-size: 4vw;
 }
 
 .presentation-container p {
@@ -217,21 +217,21 @@ box-sizing:inherit
 }
 
 .presentation-container h3 {
-    font-size: 4.2vw;
+    font-size: 2.9vw;
     margin: 10px auto;
     padding: 10px 0 0 0;
 }
 
 .presentation-container h4 {
-    font-size: 4vw;
+    font-size: 3.2vw;
 }
 
 .presentation-container span {
-    font-size: 3.5vw;
+    font-size: 2.6vw;
 }
 
 .presentation-container cite {
-    font-size: 3vw;
+    font-size: 2.3vw;
 }
 
 .textbox-small {
@@ -248,20 +248,24 @@ box-sizing:inherit
     padding: 2vw 10px;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 3vw;
+    font-size: 2.3vw;
     margin: 2.6vw auto 10px auto; 
     width: 100%;
 }
 
 .textbox-medium {
     border-radius: 10px; 
-    font-size: 2.6vw;
+    font-size: 2.3vw;
     font-weight: bold;
-    padding: 8vw 5vw;
+    padding: 6vw 3.5vw;
 }
 
 .textbox-medium span {
     font-size: inherit;
+}
+
+.presentation-container .profile-picture {
+    max-width: 35vw !important;
 }
 
 
@@ -295,6 +299,6 @@ box-sizing:inherit
     }
 
     .presentation-container img {
-        max-width: 35vw;
+        max-width: 35vw !important;
     }
 }
