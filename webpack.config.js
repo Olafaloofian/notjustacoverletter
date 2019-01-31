@@ -6,9 +6,12 @@ var webpack = require("webpack");
 module.exports = {
   mode: "development",
   devtool: "cheap-module-source-map",
-  entry: {
-    index: './index.js'
-  },
+  entry: [
+    "babel-polyfill",
+    'webpack-hot-middleware/client',
+    "react-hot-loader/patch",
+    "./index"
+  ],
   output: {
     filename: "bundle.js",
     chunkFilename: '[name].bundle.js',
@@ -16,8 +19,8 @@ module.exports = {
     publicPath: "/dist",
   },
   plugins: [
-    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
     new webpack.DefinePlugin({
       "process.env": {
         EMAIL: JSON.stringify("bulluffalo@gmail.com")
