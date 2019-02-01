@@ -2,14 +2,16 @@ import createTheme from "../../../createTheme";
 
 const colors = {
   primary: "white",
-  secondary: "#1F2022", // almost black w/ blueish tint
-  tertiary: "#fc300f", // bright red
-  quaternary: "#CECECE" // pale gray
+  secondary: "#00619e", // medium blue
+  altSecondary: '#183558', // dark blue
+  tertiary: "#00aed9", // light blue
+  quaternary: "#feb948", // golden yellow
+  quinary: "#79787d" // light grey
 };
 
 const theme = createTheme(colors, {
-    primary: "Montserrat",
-    secondary: "Helvetica"
+    primary: "'Roboto', sans-serif",
+    secondary: "Montserrat"
   }, {
     progress: {
       pacmanTop: {

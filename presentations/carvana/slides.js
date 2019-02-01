@@ -1,5 +1,5 @@
 import React from 'react';
-import { Slide, Text, Heading } from 'spectacle';
+import { Slide, Text, Heading, Cite } from 'spectacle';
 import { MDXProvider } from '@mdx-js/tag'
 import components from '../components';
 import theme from './theme';
@@ -16,19 +16,59 @@ export const DefaultSlide = ({ children, ...rest }) => (
 
 const darkComponents = {
   ...components,
-  h2: ({ children }) => <Heading size={2} textColor={theme.screen.colors.quaternary}>{children}</Heading>,
-  h3: ({ children }) => <Heading size={3} textColor={theme.screen.colors.quaternary}>{children}</Heading>,
+  h2: ({ children }) => <Heading size={2} textColor={theme.screen.colors.primary}>{children}</Heading>,
+  h3: ({ children }) => <Heading size={3} textColor={theme.screen.colors.secondary}>{children}</Heading>,
   h4: ({ children }) => <Heading size={4} textColor={theme.screen.colors.quaternary}>{children}</Heading>,
   h5: ({ children }) => <Heading size={5} textColor={theme.screen.colors.quaternary}>{children}</Heading>,
   h6: ({ children }) => <Heading size={6} textColor={theme.screen.colors.quaternary}>{children}</Heading>,
   p: ({ children }) => <Text textColor="white">{children}</Text>
 }
 
+const coloredComponents = {
+  ...components,
+  h2: ({ children }) => <Heading size={2} textColor={theme.screen.colors.primary}>{children}</Heading>,
+  h3: ({ children }) => <Heading size={3} textColor={theme.screen.colors.secondary}>{children}</Heading>,
+  h4: ({ children }) => <Heading size={4} textColor={theme.screen.colors.quaternary}>{children}</Heading>,
+  h5: ({ children }) => <Heading size={5} textColor={theme.screen.colors.tertiary}>{children}</Heading>,
+  h6: ({ children }) => <Heading size={6} textColor={theme.screen.colors.altSecondary}>{children}</Heading>,
+  p: ({ children }) => <Text textColor="white">{children}</Text>
+}
+
+const greyComponents = {
+  ...components,
+  h2: ({ children }) => <Heading size={2} textColor={theme.screen.colors.primary}>{children}</Heading>,
+  h3: ({ children }) => <Heading size={3} textColor={theme.screen.colors.secondary}>{children}</Heading>,
+  h4: ({ children }) => <Heading size={4} textColor={theme.screen.colors.primary}>{children}</Heading>,
+  h5: ({ children }) => <Heading size={5} textColor={theme.screen.colors.tertiary}>{children}</Heading>,
+  h6: ({ children }) => <Heading size={6} textColor={theme.screen.colors.quaternary}>{children}</Heading>,
+  p: ({ children }) => <Text textColor="white">{children}</Text>
+}
+
+
 export const DarkSlide = ({ children, ...rest }) => (
   <Slide bgColor="black" {...rest}>
     <MDXProvider components={darkComponents}>{children}</MDXProvider>
   </Slide>
 );
+
+export const ColorSlide = ({ children, ...rest }) => (
+  <Slide bgColor={theme.screen.colors.tertiary} {...rest}>
+    <MDXProvider components={coloredComponents}>{children}</MDXProvider>
+  </Slide>
+)
+
+export const AltColorSlide = ({ children, ...rest }) => (
+  <Slide bgColor={theme.screen.colors.secondary} {...rest}>
+    <MDXProvider components={coloredComponents}>{children}</MDXProvider>
+  </Slide>
+)
+
+export const GreySlide = ({ children, ...rest }) => (
+  <Slide bgColor={theme.screen.colors.quinary} {...rest}>
+    <MDXProvider components={greyComponents}>{children}</MDXProvider>
+  </Slide>
+)
+
 
 // CODE LAYOUT
 

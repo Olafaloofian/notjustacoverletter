@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './home.css'
 import { Link } from 'react-router-dom'
 
-const presentations = ['MotionDSP', 'Cubic']
+const presentations = ['MotionDSP', 'Cubic', 'Carvana']
 
 export default class LandingPage extends Component {
     state = {
@@ -26,7 +26,7 @@ export default class LandingPage extends Component {
 
     // A lot of this app is heavily reliant on knowing the size of the viewport to make sure the user is shown the information in the best way possible.
     componentDidMount() {
-        window.addEventListener('orientationchange', (e) => this.updateWindowDimensions(e), { passive: false });
+        window.addEventListener('orientationchange', (e) => this.updateWindowDimensions(e, true), { passive: false });
 
         window.addEventListener('resize', (e) => this.updateWindowDimensions(e), { passive: false });
     }
@@ -38,12 +38,16 @@ export default class LandingPage extends Component {
     }
 
     // Handles changes in the window dimensions
-    updateWindowDimensions = (e) => {
+    updateWindowDimensions = (e, reverse) => {
         if(e) {
             e.preventDefault()
         }
 
-        this.setState({ width: window.innerHeight, height: window.innerWidth });
+        if(reverse) {
+            this.setState({ width: window.innerHeight, height: window.innerWidth });
+        } else {
+            this.setState({ width: window.innerWidth, height: window.innerHeight });
+        }
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -73,15 +77,16 @@ export default class LandingPage extends Component {
     }
 
     render() {
-        const {displayList, input} = this.state
+        const {displayList, input, height, width} = this.state
         const isMobile = this.state.width < 1000
+        console.log('------------ this.state.height, this.state.width', this.state.height, this.state.width)
         
         return (
             <div className='container' style={isMobile ? { height: this.state.height } : {} } >
                 <div className='home-top'></div>
                 <div className="content">
                     <header>
-                        <h2 className='title'>NOT JUST A COVER LETTER</h2>
+                        {height > 150 && <h2 className='title'>NOT JUST A COVER LETTER</h2>}
                         {!isMobile &&                         <h3>Reviewing job applications doesn't have to be boring!</h3>}
                     </header>
                     <div className="tooltip-container">
@@ -95,9 +100,9 @@ export default class LandingPage extends Component {
                         )):
                             <div className='whitebox'>{input.length !== 0 && input.length < 3 ? 'Please type at least three characters.' : 'Sorry, no matches were found'}</div>}
                         </div>}
-                        {isMobile &&                         <h3>Reviewing job applications doesn't have to be boring!</h3>}
+                        {isMobile && height > 500 && <h3>Reviewing job applications doesn't have to be boring!</h3>}
                 </div>
-                <footer>Designed and developed by Michael Kerr</footer>
+                <footer>{isMobile && height > 350 && 'Designed and developed by Michael Kerr'}</footer>
             </div>
         );
     }

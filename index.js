@@ -26,7 +26,6 @@ const render = () => {
 render(); 
 
 if (module.hot) {
-  console.log('------------ MODULE HOT')
   module.hot.accept('./site-components/OuterContainer', () => {
     render()
   });    

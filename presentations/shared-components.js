@@ -1,6 +1,7 @@
 import React from 'react'
 import './shared-components.css'
 import resume from '../assets/Michael-Kerr-Resume.pdf'
+import { isLandscape } from '../site-components/Presentations'
 
 // Two circles with an animated line connecting them
 export const CircleAnimation = () => {
@@ -91,7 +92,7 @@ export class InteractiveSlider extends React.Component {
                         )
                     })}
                 </div>
-                <div className={`clickable ${this.state.list.length === 3 ? 'hidden': ''}`} onClick={this.slideOnDown} style={{ background: this.props.style[this.state.list.length] || 'grey', transition: '0.5s all ease-in-out'}}>{this.state.list.length ? '▼' : 'Click Here!'}</div>
+                <div className={`clickable ${this.state.list.length === 3 ? 'hidden': ''}`} onClick={this.slideOnDown} style={{ background: this.props.style[this.state.list.length] || 'grey', transition: '0.5s all ease-in-out'}}>{this.state.list.length ? '▼' : isLandscape ? 'Tap Here!' : 'Click Here!'}</div>
             </div>
         )
     }
@@ -106,11 +107,28 @@ export const AnimatedBackground = (props) => {
     )
 }
 
+// A card that flips on tap or mouse hover
+export const FlipCard = (props) => {
+    return (
+        <div className='flipcard'>
+            <div className="flipcard-inner">
+                <div className="flipcard-front" style={{ background: props.style.frontBackground, color: props.style.frontColor }}>
+                    {props.front}
+                    <div className='anchor-bottom' style={{ background: props.style.backBackground, color: props.style.backColor }}>{isLandscape ? 'Tap' : 'Hover'} to flip!</div>
+                </div>
+                <div className="flipcard-back" style={{ background: props.style.backBackground, color: props.style.backColor }}>
+                    {props.back}
+                </div>
+            </div>
+        </div>
+    )
+}
+
 // Most often for end of presentation. Displays buttons with extra resources.
 export const HiringResources = (props) => {
     return (
         <div className="hiring-container">
-            <div className="top-title" style={{ color: props.primary }}>
+            <div className="top-title" style={{ color: props.primary, fontFamily: props.font }}>
                 Thank you for taking the time to view this presentation. I hope you enjoyed a more interactive hiring experience! NotJustACoverLetter.com was designed and coded by me.
             </div>
             <div className="resources-container" style={{ background: props.primary }}>

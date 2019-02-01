@@ -257,7 +257,7 @@ box-sizing:inherit
     border-radius: 10px; 
     font-size: 2.3vw;
     font-weight: bold;
-    padding: 6vw 3.5vw;
+    padding: 5vw 3vw;
 }
 
 .textbox-medium span {
@@ -266,6 +266,10 @@ box-sizing:inherit
 
 .presentation-container .profile-picture {
     max-width: 35vw !important;
+}
+
+.company-logo {
+    max-width: 20vw;
 }
 
 
@@ -298,7 +302,7 @@ box-sizing:inherit
         font-size: 2.1vw;
     }
 
-    .presentation-container img {
+    .presentation-container .profile-picture {
         max-width: 35vw !important;
     }
 }
