@@ -17,6 +17,7 @@
     "@types/spectacle": "^5.2.3",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "deepmerge": "^2.1.1",
+    "dotenv-webpack": "^1.7.0",
     "html-webpack-plugin": "^3.2.0",
     "normalize.css": "8.0.0",
     "react": "^16.7.0",

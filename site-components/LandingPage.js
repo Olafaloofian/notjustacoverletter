@@ -79,7 +79,6 @@ export default class LandingPage extends Component {
     render() {
         const {displayList, input, height, width} = this.state
         const isMobile = this.state.width < 1000
-        console.log('------------ this.state.height, this.state.width', this.state.height, this.state.width)
         
         return (
             <div className='container' style={isMobile ? { height: this.state.height } : {} } >
@@ -87,7 +86,7 @@ export default class LandingPage extends Component {
                 <div className="content">
                     <header>
                         {height > 150 && <h2 className='title'>NOT JUST A COVER LETTER</h2>}
-                        {!isMobile &&                         <h3>Reviewing job applications doesn't have to be boring!</h3>}
+                        {!isMobile && <h3>Reviewing job applications doesn't have to be boring!</h3>}
                     </header>
                     <div className="tooltip-container">
                         <input type="text" name='input' autoComplete='off' onChange={(e) => this.handleInput(e)} placeholder='Company Name'/>

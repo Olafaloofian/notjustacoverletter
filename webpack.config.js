@@ -2,6 +2,7 @@
 
 var path = require("path");
 var webpack = require("webpack");
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
   mode: "development",
@@ -21,11 +22,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
-    new webpack.DefinePlugin({
-      "process.env": {
-        EMAIL: JSON.stringify("bulluffalo@gmail.com")
-      }
-    }),
+    new Dotenv()
   ],
   module: {
     rules: [{

@@ -3,6 +3,7 @@
 var path = require("path");
 var webpack = require("webpack");
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
   mode: "production",
@@ -21,12 +22,7 @@ module.exports = {
       { from: './dist/sunmail.ico' }
     ]),
     new webpack.HotModuleReplacementPlugin(),
-    // TODO: Is this the best way to hide in-app stuff?
-    new webpack.DefinePlugin({
-      "process.env": {
-        EMAIL: JSON.stringify("bulluffalo@gmail.com")
-      }
-    }),
+    new Dotenv(),
     new webpack.DefinePlugin({
       "process.env": {
         NODE_ENV: JSON.stringify("production")

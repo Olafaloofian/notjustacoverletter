@@ -27,8 +27,9 @@ export default class Presentations extends React.Component {
 
         // Routing the user to the correct presentation based on URL, with code splitting so that the user doesn't load a ton of stuff they aren't trying to see.
         const { company } = this.props.match.params
-        const themeImport = import(`../presentations/${company === 'cubic' || company === 'motiondsp' ? 'motiondsp' : company }/theme`)
-        const slideImport = import(`../presentations/${company === 'cubic' || company === 'motiondsp' ? 'motiondsp' : company }/index.mdx`)
+        const companyName = company.toLowerCase()
+        const themeImport = import(`../presentations/${companyName === 'cubic' || companyName === 'motiondsp' ? 'motiondsp' : companyName }/theme`)
+        const slideImport = import(`../presentations/${companyName === 'cubic' || companyName === 'motiondsp' ? 'motiondsp' : companyName }/index.mdx`)
         Promise.all([slideImport, themeImport]).then(resolve => {
             const theme = resolve[1].default
             const transitions = resolve[0].transitions

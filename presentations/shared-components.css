@@ -349,6 +349,7 @@
     height: 70vh;
     perspective: 1000px;
     margin: 0 auto;
+    font-size: 3vw;
 }
 
 .flipcard-inner {
@@ -390,20 +391,27 @@
 }
 
 .flipcard img {
-    max-height: 50vh;
+    max-height: 40vh;
+    position: relative;
+    margin: 10px auto;
+    padding-top: 10px;
 }
 
 .flipcard .anchor-bottom {
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    bottom: 20;
     padding: 10px 15px;
     border-radius: 10px;
-    margin: 20px auto;
+    margin: 30px auto 20px auto;
     font-size: 2vw;
 }
 
 @media (max-width: 1000px) {
     .resources a .svg-button {
         padding: 2px 2vw;
+    }
+
+    .flipcard-back div {
+        font-size: 2vw;
     }
 }

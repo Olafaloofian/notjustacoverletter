@@ -118,6 +118,7 @@ export const FlipCard = (props) => {
                 </div>
                 <div className="flipcard-back" style={{ background: props.style.backBackground, color: props.style.backColor }}>
                     {props.back}
+                    <div className='anchor-bottom' style={{ background: props.style.frontBackground, color: props.style.frontColor }}>{isLandscape ? 'Tap away' : 'Hover away'} to flip!</div>
                 </div>
             </div>
         </div>
