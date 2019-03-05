@@ -1,0 +1,151 @@
+import {Cite} from 'spectacle';
+import {DarkSlide, CodeSlide, ColorSlide, GreySlide, AltColorSlide} from './slides';
+import { CircleAnimation, ResumeAnimation, BlockGraphic, SkewBox, InteractiveSlider, AnimatedBackground, HiringResources, FlipCard } from '../shared-components'
+import profile from '../../assets/profile.jpg'
+
+export default DarkSlide
+
+<div style={{ borderRadius: '10px', padding: '10vw 19vw', maxWidth: '70vw', background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto'}}>
+  <img className='company-logo' src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1200px-Logo_NIKE.svg.png' alt='Nike'/>
+</div>
+
+---
+export default GreySlide
+
+export const transition = ['zoom']
+
+# Hey there Nike!
+<br/>
+
+**My name is Michael Kerr** 
+<figure style={{ margin: '20px 0' }}>
+  <img className='profile-picture' src={profile} alt='Michael Kerr' style={{ borderRadius: '10px', width: '540px', height: 'auto', margin: '0 auto' }}/>
+</figure>
+
+### I am a full stack web developer
+
+<br/>
+
+---
+
+export const transition = ['fade']
+
+<div className='textbox-small' style={{ background: '#0083c3', color: 'white' }}>
+  I know you are going through a lot of job applications right now,
+  <br/>
+  so I thought I'd give you a break from reading all those letters and just let you scroll through this presentation! 😉
+</div>
+
+<ResumeAnimation />
+
+---
+
+export const transition = ['fade']
+
+export default GreySlide
+
+**If you have my resume on hand, you may look at it and think:**
+
+<div className='textbox-uppercase' style={{ background: 'white' }}>
+  "Wow, this guy isn't a programmer! He's a NOOB-grammer!"
+</div>
+
+<br/>
+
+<div className='textbox-medium' style={{ background: "#fd9134", color: 'white' }}>
+  I don't blame you! Everyone wants that Senior with 20 years of experience, right?
+  <br/>
+  <br/>
+  I might be relatively new to the industry, but I bring <span style={{ color: 'black'}}>characteristics</span> to the table that are <span style={{ color: 'black'}}>hard to find</span> in other developers.
+</div>
+
+---
+
+export default ColorSlide
+
+## Here are some reasons why I should work with you guys:
+
+---
+
+export const transition = ['fade']
+
+<FlipCard front={<div><div>I like cars. A lot.</div><br/><div>In fact, my friends all say I'm a car enthusiast. I'm very interested in BOTH industries Carvana operates in (automobiles and software)!</div></div>} back={<div><img src='https://s3.amazonaws.com/michaelkerr-projectmedia/Bezerk+Focus.jpg' alt='Car' /><div>This is my trusty daily driver: a 2012 Ford Focus Titanium, with some... special modifications 😉</div></div>} style={{ frontBackground: "black", backBackground: 'white', frontColor: 'white', backColor: 'black' }} />
+
+---
+
+export default DarkSlide
+
+export const transition = ['zoom']
+
+<SkewBox content={{left: 'I know Carvana operates on the qualities of honest value and great customer service.', right: 'You can count on me to always produce clean, customer-centric code!'}} style={{ right: 'white', left: '#00aed9' }}/>
+
+---
+
+export default AltColorSlide
+
+#### Carvana's culture resonates with me.
+
+<div className='textbox-medium' style={{ background: 'white', color: '#79787d' }}>I've had the opportunity to tour Carvana HQ more than once, and every time I couldn't help but think to myself: "Working here would be sweet!". I love the open environment and the encouraging disposition of all the employees. Plus, the break lounge is 👌👌. I can see myself playing Nintendo Switch in there with fellow co-workers long after we should have gone home for the day.</div>
+
+---
+
+export const transition = ['zoom']
+
+export default ColorSlide
+
+## What makes me different from other programmers?
+
+---
+
+export default AltColorSlide
+
+<CircleAnimation />
+
+<div className='textbox-medium' style={{ background: 'black', color: 'white' }}>
+  The driving <span style={{ color: '#1aaaec' }}>passion</span> in my life has always been <span style={{ color: '#1aaaec' }}>creation.</span>
+  <br/>
+  After trying many different jobs, I became <span style={{ color: '#1aaaec' }}>obsessed</span> with coding because of the pure channel it creates for me to transform my <span style={{ color: '#1aaaec' }}>unique thoughts</span> into <span style={{ color: '#1aaaec' }}>tangible outcomes.</span> I will use this <span style={{ color: '#1aaaec' }}>creativity</span> to make <span style={{ color: '#1aaaec' }}>Carvana's</span> software <span style={{ color: '#1aaaec' }}>stand out</span> in the market!
+</div>
+
+---
+
+export const transition = ['fade']
+
+#### Three qualities that set me apart:
+
+<BlockGraphic 
+  text={{
+    topText: 'When I approach a problem, I look at it from every angle until I discover a truly innovative and exciting solution. I\'m not one to settle for anything normal or boring.', 
+    middleText: 'I am an extremely fast learner, able to pick up on new concepts and immediately start applying them.', 
+    bottomText: 'I have an acute awareness of how the code I\'m writing affects Carvana\'s end users - and what that means to our finances.'
+  }} 
+  style={{ 
+    topBlock: '#099CFB', 
+    middleBlock: '#00619e', 
+    bottomBlock: '#0085DB' 
+  }}/>
+
+---
+
+<InteractiveSlider items={['Through my work, I hope to make a positive difference in the world and help solve people\'s problems in ways that excites them.', 'I\'m comfortable collaborating alongside others as part of a team, and able to manage solo productivity on my own time.']} style={['#00619e', '#183558', '#feb948']}/>
+
+---
+
+export const transition = ['zoom']
+
+export default GreySlide
+
+***"True ambition and a constant desire to learn are what makes a great developer."***
+<Cite>I just made that up but probably Bill Gates at some point</Cite>
+
+---
+
+<AnimatedBackground content={<React.Fragment><span>Carvana is a company I would be delighted to work with. I'm attempting to <span style={{ color: "#feb948" }}>achieve something extraordinary</span> with my coding ability rather than settle for common or comfortable systems, and I feel like <span style={{ color: "#feb948" }}>you will help me reach this goal.</span></span></React.Fragment>} style={['#00619e', '#00aed9', '#00619e']} />
+
+---
+
+export const transition = ['fade']
+
+export default AltColorSlide
+
+<HiringResources primary='white' secondary="#00619e" font="'Roboto', sans-serif"/>
