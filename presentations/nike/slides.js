@@ -63,6 +63,12 @@ export const GreySlide = ({ children, ...rest }) => (
   </Slide>
 )
 
+export const AltColorSlide = ({ children, ...rest }) => (
+  <Slide bgColor='#d86b0b' {...rest}>
+    <MDXProvider components={coloredComponents}>{children}</MDXProvider>
+  </Slide>
+)
+
 // CODE LAYOUT
 
 export const CodeSlide = ({ children, ...rest }) => (

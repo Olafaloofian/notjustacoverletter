@@ -1,6 +1,6 @@
 import {Cite} from 'spectacle';
 import {DarkSlide, CodeSlide, ColorSlide, GreySlide, AltColorSlide} from './slides';
-import { CircleAnimation, ResumeAnimation, BlockGraphic, SkewBox, InteractiveSlider, AnimatedBackground, HiringResources, FlipCard } from '../shared-components'
+import { CircleAnimation, ResumeAnimation, BlockGraphic, SkewBox, InteractiveSlider, AnimatedBackground, HiringResources, ScrollArea, FlipCard } from '../shared-components'
 import profile from '../../assets/profile.jpg'
 
 export default DarkSlide
@@ -42,7 +42,7 @@ export const transition = ['fade']
 
 export const transition = ['fade']
 
-export default GreySlide
+export default DarkSlide
 
 **If you have my resume on hand, you may look at it and think:**
 
@@ -69,7 +69,7 @@ export default ColorSlide
 
 export const transition = ['fade']
 
-<FlipCard front={<div><div>I like cars. A lot.</div><br/><div>In fact, my friends all say I'm a car enthusiast. I'm very interested in BOTH industries Carvana operates in (automobiles and software)!</div></div>} back={<div><img src='https://s3.amazonaws.com/michaelkerr-projectmedia/Bezerk+Focus.jpg' alt='Car' /><div>This is my trusty daily driver: a 2012 Ford Focus Titanium, with some... special modifications 😉</div></div>} style={{ frontBackground: "black", backBackground: 'white', frontColor: 'white', backColor: 'black' }} />
+<FlipCard front={<div><div>Sports and fitness are very important to me.</div><br/><div>I'm a unique candidate because I am very involved in the lifestyle Nike promotes - while possessing the technical skills needed to help out behind the scenes!</div></div>} back={<div><img src='https://s3.amazonaws.com/michaelkerr-projectmedia/00100lPORTRAIT_00100_BURST20190307162230315_COVER.jpg' alt='Nike' /><div>These days, you can often find me at the gym going for a run or lifting some weights in my Nike trainers.</div></div>} style={{ frontBackground: "black", backBackground: 'rgb(207, 207, 207)', frontColor: 'white', backColor: 'black' }} />
 
 ---
 
@@ -77,15 +77,21 @@ export default DarkSlide
 
 export const transition = ['zoom']
 
-<SkewBox content={{left: 'I know Carvana operates on the qualities of honest value and great customer service.', right: 'You can count on me to always produce clean, customer-centric code!'}} style={{ right: 'white', left: '#00aed9' }}/>
+<SkewBox content={{left: 'Nike prides itself on providing inspiration and innovation to athletes', right: 'You can count on me to reflect these values in my work as I develop exciting solutions for Nike customers'}} style={{ right: 'white', left: '#fd9134' }}/>
+
+---
+
+export default GreySlide
+
+<ScrollArea title='My Nike Story' body={<div><div>Love for Nike runs deep in the veins of my family. Rewind time three generations to the 1950's... My great-grandfather decided to start a legendary sports store called 'Kerr Sporting Goods' in Arizona. This business was one of the very first Nike distributors in the whole state! A lot of Kerr Sporting Goods' success can be attributed to this partnership - and in turn they helped put a lot of local sport teams into Nike gear. Although the company later ran into issues serious enough to force a shutdown, there isn't a person in my family who hasn't heard about the goodol' times of Kerr Sporting Goods and Nike. To this day, we all intentionally wear Nike clothing and shoes and show them off to each other. For a final note of perspective on how tied to Nike the Kerr family is: when my grandfather recently died he was buried in Nike socks.</div><div>From a young age, Nike's mission of encouraging people to get out and get physical has resonated with me. I've participated in many different sports and events while wearing many different Nike cleats and shoes. Simply put, I'm a fan to the very bone. I'd consider working with Nike a monumental honor. And in the end, having employees that truly care about the company is important, right?</div></div>} style={{background: 'white', color: 'black'}} />
 
 ---
 
 export default AltColorSlide
 
-#### Carvana's culture resonates with me.
+#### I want to learn what goes into making a great company.
 
-<div className='textbox-medium' style={{ background: 'white', color: '#79787d' }}>I've had the opportunity to tour Carvana HQ more than once, and every time I couldn't help but think to myself: "Working here would be sweet!". I love the open environment and the encouraging disposition of all the employees. Plus, the break lounge is 👌👌. I can see myself playing Nintendo Switch in there with fellow co-workers long after we should have gone home for the day.</div>
+<div className='textbox-medium' style={{ background: 'white', color: 'black' }}>I'm interested in a lot more than just programming. As part of my developing career, one of my goals is to figure out the decisions that need to be made for a company to be successful. In my mind, there's no better place to get this experience than Nike.</div>
 
 ---
 
@@ -102,9 +108,9 @@ export default AltColorSlide
 <CircleAnimation />
 
 <div className='textbox-medium' style={{ background: 'black', color: 'white' }}>
-  The driving <span style={{ color: '#1aaaec' }}>passion</span> in my life has always been <span style={{ color: '#1aaaec' }}>creation.</span>
+  The driving <span style={{ color: '#0083c3' }}>passion</span> in my life has always been <span style={{ color: '#0083c3' }}>creation.</span>
   <br/>
-  After trying many different jobs, I became <span style={{ color: '#1aaaec' }}>obsessed</span> with coding because of the pure channel it creates for me to transform my <span style={{ color: '#1aaaec' }}>unique thoughts</span> into <span style={{ color: '#1aaaec' }}>tangible outcomes.</span> I will use this <span style={{ color: '#1aaaec' }}>creativity</span> to make <span style={{ color: '#1aaaec' }}>Carvana's</span> software <span style={{ color: '#1aaaec' }}>stand out</span> in the market!
+  After trying many different jobs, I became <span style={{ color: '#0083c3' }}>obsessed</span> with coding because of the pure channel it creates for me to transform my <span style={{ color: '#0083c3' }}>unique thoughts</span> into <span style={{ color: '#0083c3' }}>tangible outcomes.</span> I will use this <span style={{ color: '#0083c3' }}>creativity</span> to make <span style={{ color: '#0083c3' }}>Nike's</span> software <span style={{ color: '#0083c3' }}>stand out</span> in the sports apparel market!
 </div>
 
 ---
@@ -117,17 +123,17 @@ export const transition = ['fade']
   text={{
     topText: 'When I approach a problem, I look at it from every angle until I discover a truly innovative and exciting solution. I\'m not one to settle for anything normal or boring.', 
     middleText: 'I am an extremely fast learner, able to pick up on new concepts and immediately start applying them.', 
-    bottomText: 'I have an acute awareness of how the code I\'m writing affects Carvana\'s end users - and what that means to our finances.'
+    bottomText: 'I have an acute awareness of how the code I\'m writing affects Nike\'s end users - and what that means to our finances.'
   }} 
   style={{ 
-    topBlock: '#099CFB', 
-    middleBlock: '#00619e', 
-    bottomBlock: '#0085DB' 
+    topBlock: 'rgb(207, 207, 207)', 
+    middleBlock: 'grey', 
+    bottomBlock: 'black' 
   }}/>
 
 ---
 
-<InteractiveSlider items={['Through my work, I hope to make a positive difference in the world and help solve people\'s problems in ways that excites them.', 'I\'m comfortable collaborating alongside others as part of a team, and able to manage solo productivity on my own time.']} style={['#00619e', '#183558', '#feb948']}/>
+<InteractiveSlider items={['Through my work, I hope to make a positive difference in the world and help solve people\'s problems in ways that excites them.', 'I\'m comfortable collaborating alongside others as part of a team, and able to manage solo productivity on my own time.']} style={['#fd9134', '#191919', '#0083c3']}/>
 
 ---
 
@@ -140,7 +146,7 @@ export default GreySlide
 
 ---
 
-<AnimatedBackground content={<React.Fragment><span>Carvana is a company I would be delighted to work with. I'm attempting to <span style={{ color: "#feb948" }}>achieve something extraordinary</span> with my coding ability rather than settle for common or comfortable systems, and I feel like <span style={{ color: "#feb948" }}>you will help me reach this goal.</span></span></React.Fragment>} style={['#00619e', '#00aed9', '#00619e']} />
+<AnimatedBackground content={<React.Fragment><span>Nike is a company I would be delighted to work with. I'm attempting to <span style={{ color: "#fd9134" }}>achieve something extraordinary</span> with my coding ability rather than settle for common or comfortable systems, and I feel like <span style={{ color: "#fd9134" }}>you will help me reach this goal.</span></span></React.Fragment>} style={['#0083c3', '#00aed9', '#0083c3']} />
 
 ---
 
@@ -148,4 +154,4 @@ export const transition = ['fade']
 
 export default AltColorSlide
 
-<HiringResources primary='white' secondary="#00619e" font="'Roboto', sans-serif"/>
+<HiringResources primary='white' secondary="#0083c3" font="'Roboto', sans-serif"/>

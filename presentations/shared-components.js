@@ -107,6 +107,17 @@ export const AnimatedBackground = (props) => {
     )
 }
 
+// A scrollable card for a lot of text
+export const ScrollArea = (props) => {
+    return (
+        <div className="scrollarea-container" style={{ background: props.style.background, color: props.style.background.color}}>
+            <div className="scrollarea-title">{props.title}</div>
+            <div className="scrollarea-body">{props.body}</div>
+            <div className="arrow-down"></div>
+        </div>
+    )
+}
+
 // A card that flips on tap or mouse hover
 export const FlipCard = (props) => {
     return (
