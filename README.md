@@ -2,7 +2,9 @@
 
 ## Reviewing job applications doesn't have to be a chore! This web app shows hiring managers different curated presentations that replace the traditional resume/coverletter application scheme.
 
-#### Tips to a good presentation:
+[Click here for live app!](https://notjustacoverletter.com)
+
+#### Notes on good cover letter presentations:
 
 - Talk about projects
 - Discuss unique experiences
