@@ -1,0 +1,154 @@
+import {Cite} from 'spectacle';
+import {DarkSlide, CodeSlide, ColorSlide, GreySlide, AltColorSlide, RedSlide, YellowSlide} from './slides';
+import { CircleAnimation, ResumeAnimation, BlockGraphic, SkewBox, InteractiveSlider, AnimatedBackgroundSquare, HiringResourcesAlt, FlipCard } from '../shared-components'
+import profile from '../../assets/profile.jpg'
+
+export default ColorSlide
+
+<div style={{ padding: '10vw 19vw', maxWidth: '70vw', background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto', boxShadow: '0 0 30px #bfbfbf'}}>
+  <img className='company-logo' src='https://about.sprouts.com/wp-content/uploads/2017/10/Sprouts_Logo_Vintage_Wood.png' alt='Sprouts'/>
+</div>
+
+---
+export default DarkSlide
+
+export const transition = ['zoom']
+
+# Hi Sprouts!
+<br/>
+
+**My name is Michael Kerr** 
+<figure style={{ margin: '20px 0' }}>
+  <img className='profile-picture' src={profile} alt='Michael Kerr' style={{ borderRadius: '50%', width: '340px', height: 'auto', margin: '0 auto' }}/>
+</figure>
+
+### I am a software engineer.
+
+<br/>
+
+---
+
+export const transition = ['fade']
+
+<div className='textbox-small-square' style={{ background: '#1e772d', color: '#f8f8ff' }}>
+  I know you are going through a lot of job applications right now,
+  <br/>
+  so I thought I'd give you a break from reading all those letters and just let you scroll through this presentation! 😉
+</div>
+
+<ResumeAnimation />
+
+---
+
+export const transition = ['fade']
+
+export default AltColorSlide
+
+**If you have my resume on hand, you may be thinking:**
+
+<div className='textbox-uppercase-square' style={{ background: '#f8f8ff', fontFamily: 'Roboto'}}>
+  "What on earth is an artist engineer?"
+</div>
+
+<br/>
+
+<div className='textbox-medium-square' style={{ background: '#f8f8ff', color: '#79787d', fontFamily: 'Roboto' }}>
+  I believe that every line of code I write is a work of art. In fact, I see my whole life as a series of artistic decisions!
+  <br/>
+  <br/>
+  As an engineer, I bring <span style={{ color: "#f37321"}}>characteristics</span> to the table that <span style={{ color: "#f37321"}}>reflect</span> my passion for design.
+</div>
+
+---
+
+export default YellowSlide
+
+## Here are some reasons why I should work with you guys:
+
+---
+
+export const transition = ['fade']
+
+export default DarkSlide
+
+<FlipCard square={true} front={<div style={{fontFamily: 'Roboto'}}><div>I believe in supporting local produce.</div><br/><div>My friends like to poke fun at me <br/> since I prefer to eat cage-free eggs and grass-fed butter.<br/> I don't mind - I'm proud of it!</div></div>} back={<div style={{fontFamily: 'Roboto'}}>I truly love what Sprouts stands for, and as a Phoenix native I've been shopping there as long as I can remember!</div>} style={{ frontBackground: "#1e772d", backBackground: '#f8f8ff', frontColor: 'white', backColor: '#79787d' }} />
+
+---
+
+export default ColorSlide
+
+export const transition = ['zoom']
+
+<SkewBox content={{left: 'I know Sprouts operates on the qualities of honest value and integrity.', right: 'You can count on me to always produce beautiful, customer-centric code.'}} style={{ right: '#f8f8ff', left: '#f37321' }}/>
+
+---
+
+export default AltColorSlide
+
+#### Sprouts' culture resonates with me.
+<br/>
+<div className='textbox-medium-square' style={{ background: 'white', color: '#79787d', fontFamily: 'Roboto' }}>From every conversation I've had with a Sprout's employee, I can certainly tell that Sprout's is a positive and encouraging company to work for!</div>
+
+---
+
+export const transition = ['zoom']
+
+export default ColorSlide
+
+#### What makes me different from other programmers?
+
+---
+
+export const transition = ['fade']
+
+#### Three qualities that set me apart:
+
+<BlockGraphic 
+  text={{
+    topText: 'When I approach a problem, I look at it from every angle until I discover a truly innovative and exciting solution. I\'m not one to settle for anything normal or boring.', 
+    middleText: 'I am an extremely fast learner, able to pick up on new concepts and immediately start applying them.', 
+    bottomText: 'I have an acute awareness of how the code I\'m writing affects Sprouts\' end users - and what that means to our finances.'
+  }} 
+  style={{ 
+    topBlock: '#ed1a36', 
+    middleBlock: '#f37321', 
+    bottomBlock: '#22772d' 
+  }}/>
+
+
+---
+
+export default YellowSlide
+
+<CircleAnimation color='#a62022'/>
+
+<div className='textbox-medium-square' style={{ background: '#a62022', color: 'white', fontFamily: 'Roboto' }}>
+  The driving <span style={{ color: '#e8f000' }}>passion</span> in my life has always been <span style={{ color: '#e8f000' }}>creativity.</span>
+  <br/>
+  I love <span style={{ color: '#e8f000' }}>programming</span> because of the pure channel it creates for me to transform my <span style={{ color: '#e8f000' }}>unique thoughts</span> into <span style={{ color: '#e8f000' }}>tangible outcomes.</span> I will use this <span style={{ color: '#e8f000' }}>creativity</span> to make <span style={{ color: '#e8f000' }}>Sprouts'</span> software <span style={{ color: '#e8f000' }}>stand out</span> in the market!
+</div>
+
+---
+
+<InteractiveSlider items={['Through my work, I hope to make a positive difference in the world and help solve people\'s problems in ways that excites them.', 'I\'m comfortable collaborating alongside others as part of a team, and able to manage solo productivity on my own time.']} style={["#a62022", "#f37321", '#1e772d']}/>
+
+---
+
+export const transition = ['zoom']
+
+export default RedSlide
+
+***"True ambition and a constant desire to learn are what makes a great developer."***
+<Cite style={{color:'yellow', fontFamily: 'Roboto'}}>I just made that up but probably Bill Gates at some point</Cite>
+
+---
+
+<AnimatedBackgroundSquare content={<React.Fragment><span>Sprout's is a company I would be delighted to work with. I'm attempting to <span style={{ color: "#feb948" }}>achieve something extraordinary</span> with my coding ability rather than settle for the common or comfortable, and I feel like <span style={{ color: "#feb948" }}>you will help me reach this goal.</span></span></React.Fragment>} style={['#1e772d', "#2da83e", '#1e772d']} />
+
+---
+
+export const transition = ['fade']
+
+export default AltColorSlide
+
+<HiringResourcesAlt primary='white' secondary="#a62022" font="'Roboto', sans-serif"/>

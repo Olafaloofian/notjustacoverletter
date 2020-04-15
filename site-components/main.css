@@ -243,6 +243,15 @@ box-sizing:inherit
     margin: 0 auto 10px auto;
 }
 
+.textbox-small-square {
+    font-size: 2.2vw;
+    width: 100%;
+    font-family: 'Mukta', sans-serif;
+    padding: 2vw 10px;
+    margin: 0 auto 10px auto;
+    box-shadow: 0px 0px 28px #a8a8a8;
+}
+
 .textbox-uppercase {
     border-radius: 10px;
     padding: 2vw 10px;
@@ -253,11 +262,27 @@ box-sizing:inherit
     width: 100%;
 }
 
+.textbox-uppercase-square {
+    padding: 2vw 10px;
+    font-weight: 700;
+    font-size: 2.3vw;
+    margin: 2.6vw auto 10px auto; 
+    width: 100%;
+    box-shadow: 0px 0px 28px #a8a8a8;
+}
+
 .textbox-medium {
     border-radius: 10px; 
     font-size: 2.3vw;
     font-weight: bold;
     padding: 5vw 3vw;
+}
+
+.textbox-medium-square {
+    font-size: 2.3vw;
+    font-weight: bold;
+    padding: 5vw 3vw;
+    box-shadow: 0px 0px 28px #a8a8a8;
 }
 
 .textbox-medium span {
